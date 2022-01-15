@@ -1,0 +1,35 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/styleHbs.css' />
+  </head>
+  <body>
+    <h1>this is a dynamic html</h1>
+    {{! hbs if statement }}
+    {{#if show}}
+      <h2>Hello my name is {{name}} and I am {{age}}</h2>
+    {{else}}
+      <h2>there is no name to show</h2>
+    {{/if}}
+    <ul>
+      {{! hbs for loop }}
+      {{#each fruits}}
+        <li>{{@index}}: {{this}}</li>
+      {{else}}
+        <li>there are no fruits</li>
+      {{/each}}
+    </ul>
+    {{! hbs for changing the context }}
+    {{#with address}}
+      <span>
+        the adress is
+        {{number}}
+        {{street}}
+        street
+      </span>
+    {{/with}}
+  </body>
+</html>
